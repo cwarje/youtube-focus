@@ -36,11 +36,28 @@ btn.onclick = function() {
   }
 };
 
-setTimeout(() => {
-    // Place the new button element at the top of the page. Dependant on current Youtube DOM structure. 
+// callback executed when Youtube Notification icon finally loads
+function handleButton(notificationButton) {
+
+    // place the button on the page next to the Subscribe and Notification buttons
     var referenceNode = document.querySelector('#notification-preference-button');
     referenceNode.parentNode.insertBefore(btn, referenceNode);
+}
 
-}, 10000);
+// set up the mutation observer
+var observer = new MutationObserver(function (mutations, me) {
+  // `mutations` is an array of mutations that occurred
+  // `me` is the MutationObserver instance
+  var notificationButton = document.getElementById('notification-preference-button');
+  if (notificationButton) {
+    handleButton(notificationButton);
+    me.disconnect(); // stop observing
+    return;
+  }
+});
 
-
+// start observing
+observer.observe(document, {
+  childList: true,
+  subtree: true
+});
