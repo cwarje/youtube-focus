@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Modify page CSS and HTML",
+    "version": "0.1.0",
+    "description": "Adds a useful button to Youtube for studying",
+    "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+    "web_accessible_resources": [
+        "icons/icon16.png"
+    ],
+    "content_scripts": [
+        {
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "https://youtube.com/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png"
+    }
+}
