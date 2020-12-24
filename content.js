@@ -36,6 +36,11 @@ btn.onclick = function() {
   }
 };
 
-// Place the new button element at the top of the page. Dependant on current Youtube DOM structure. 
-var referenceNode = document.querySelector('#center');
-referenceNode.parentNode.insertBefore(btn, referenceNode);
+setTimeout(() => {
+    // Place the new button element at the top of the page. Dependant on current Youtube DOM structure. 
+    var referenceNode = document.querySelector('#notification-preference-button');
+    referenceNode.parentNode.insertBefore(btn, referenceNode);
+
+}, 10000);
+
+

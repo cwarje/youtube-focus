@@ -1,0 +1,16 @@
+/* Styling for the button */
+#focus-button {
+  margin: 2px 4px;
+  font-family: Roboto, Noto, sans-serif;
+  font-weight: 500;
+  color: rgb(170, 170, 170);
+  background-color:#303030;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 10px 16px;
+}
+
+#focus-button:focus {
+  outline:0;
+}

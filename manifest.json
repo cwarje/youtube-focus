@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Modify page CSS and HTML",
+    "name": "Youtube Focus",
     "version": "0.1.0",
     "description": "Adds a useful button to Youtube for studying",
     "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
@@ -16,7 +16,7 @@
                 "content.js"
             ],
             "matches": [
-                "https://youtube.com/*"
+                "https://www.youtube.com/*"
             ],
             "run_at": "document_end"
         }
